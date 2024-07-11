@@ -20,9 +20,14 @@ public class EmployeController {
     public Employee addEmployee (@RequestBody Employee employee){
         return employeeService.addEmployee(employee);
     }
+
     @GetMapping("/findAllEmployee")
     public List<Employee> findAllEmployee(){
         return employeeService.findAllEmployee();
     }
 
+    @PostMapping("/saveEmployeeWithAccount")
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeService.saveEmployeeWithAccount(employee);
+    }
 }
